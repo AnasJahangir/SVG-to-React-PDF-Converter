@@ -1,15 +1,30 @@
 {
-  "name": "new-folder",
+  "name": "svg-to-react-pdf-converter",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Convert SVG files or strings into React-PDF compatible JSX components.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "svg-to-react-pdf": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2",
     "svgson": "^5.3.1"
   },
   "devDependencies": {
